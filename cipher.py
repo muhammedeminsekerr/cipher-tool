@@ -38,3 +38,8 @@ def caesar(text, shift):
         else:
             result += char
     return result 
+if __name__ == "__main__":
+    print(caesar("Merhaba Dunya", 3))
+    print(caesar("Phukded Gxqbd", -3))
+    print(vigenere("Merhaba", "key"))
+    print(vigenere(vigenere("Merhaba", "key"), "key", decrypt=True))
