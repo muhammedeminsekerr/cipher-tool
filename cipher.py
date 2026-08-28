@@ -23,3 +23,18 @@ def caesar(text, shift):
         else:
             result += char
     return result
+
+    def vigenere(text, key, decrypt=False):
+    result = ""
+    key_index = 0
+    for char in text:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            k = ord(key[key_index % len(key)].lower()) - ord('a')
+            if decrypt:
+                k = -k
+            result += chr((ord(char) - base + k) % 26 + base)
+            key_index += 1
+        else:
+            result += char
+    return result 
